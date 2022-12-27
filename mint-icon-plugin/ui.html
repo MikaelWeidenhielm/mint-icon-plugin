@@ -1,0 +1,249 @@
+
+<div data-route id="home" class="page">
+    <p>What asset type will you contribute with?</p>
+
+    <section>
+        <a class="mb-8" href="#icon-1">Icon</a>
+        <a href="#illustration">Illustration</a>
+    </section>
+</div>
+
+<div data-route id="icon-1" class="page">
+    <div>
+        <img height="280" width="280" src="https://res.cloudinary.com/dj0pc5wgk/image/upload/v1672147663/markIcon_ynzh9f.gif" />
+      
+        <div class="content">
+            <p class="bold">Step 1/6</p>
+            <p>
+                Mark your icon frame and make sure that your naming aligns with the following:
+                <br/>
+                <br/>
+                <span class="bold">
+                ✓ Asset name in lowercase
+                <br/>
+                ✓ Ideally one word
+                <br/>
+                ✗ no numbers or special characters
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="nav-wrapper">
+    <a class="mini-btn" href="#home"><-</a>    
+    <a href="#icon-2">Next</a>
+    </div>
+</div>
+
+<div data-route id="icon-2" class="page">
+    <div>
+        <img height="280" width="280" src="https://res.cloudinary.com/dj0pc5wgk/image/upload/v1672153609/copyicon_kr0edw.gif" />
+      
+        <div class="content">
+            <p class="bold">Step 2/6</p>
+            <p>
+                Create a copy of your icon, as we want to keep the original for future use.
+            </p>
+        </div>
+    </div>
+
+    <div class="nav-wrapper">
+    <a class="mini-btn" href="#icon-1"><-</a>    
+    <a href="#icon-3">Next</a>
+    </div>
+</div>
+
+<div data-route id="icon-3" class="page">
+    <div>
+        <img height="280" width="280" src="https://res.cloudinary.com/dj0pc5wgk/image/upload/v1672150814/markvector_x0naci.gif" />
+      
+        <div class="content">
+            <p class="bold">Step 3/6</p>
+            <p>
+                Inside of your icon frame, mark all vectors <span class="bold">except the “icon_template” instance.</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="nav-wrapper">
+    <a class="mini-btn" href="#icon-2"><-</a>    
+    <a href="#icon-4">Next</a>
+    </div>
+</div>
+
+<div data-route id="icon-4" class="page">
+    <div>
+        <img height="280" width="280" src="https://res.cloudinary.com/dj0pc5wgk/image/upload/v1672153042/outlinestroke_phdkxy.gif" />
+      
+        <div class="content">
+            <p class="bold">Step 4/6</p>
+            <p>
+                With all vectors marked, right click the selected layers and click <span class="bold">“Outline stroke”</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="nav-wrapper">
+    <a class="mini-btn" href="#icon-3"><-</a>    
+    <a href="#icon-5">Next</a>
+    </div>
+</div>
+
+<div data-route id="icon-5" class="page">
+    <div>
+        <img height="280" width="280" src="https://res.cloudinary.com/dj0pc5wgk/image/upload/v1672154402/selecticonagain_eajdzm.gif" />
+      
+        <div class="content">
+            <p class="bold">Step 5/6</p>
+            <p>
+                Mark the icons parent frame again. <br/> And fasten your seatbelt!
+            </p>
+        </div>
+    </div>
+
+    <div class="nav-wrapper">
+    <a class="mini-btn" href="#icon-4"><-</a>    
+    <a href="#icon-6">Next</a>
+    </div>
+</div>
+
+<div data-route id="icon-6" class="page">
+    <div>
+        <img height="280" width="280" src="https://media.tenor.com/dd-NabjUbqsAAAAM/brain-no-way.gif" />
+      
+        <div class="content">
+            <p class="bold">Step 6/6</p>
+            <p>
+                Press generate component below and let figma do the nitty gritty boring stuff.
+            </p>
+        </div>
+    </div>
+
+    <div class="nav-wrapper">
+    <a class="mini-btn" href="#icon-5"><-</a>
+    <button onclick="parent.postMessage({ pluginMessage: 'generate-icon' }, '*')">
+        Generate component
+    </button>
+    </div>
+</div>
+
+<style>
+    @font-face {
+      font-family: 'Inter';
+      font-weight: 400;
+      font-style: normal;
+      src: url("https://rsms.me/inter/font-files/Inter-Regular.woff2?v=3.7") format("woff2"), url("https://rsms.me/inter/font-files/Inter-Regular.woff?v=3.7") format("woff");
+    }
+  
+    @font-face {
+      font-family: 'Inter';
+      font-weight: 500;
+      font-style: normal;
+      src: url("https://rsms.me/inter/font-files/Inter-Medium.woff2?v=3.7") format("woff2"), url("https://rsms.me/inter/font-files/Inter-Medium.woff2?v=3.7") format("woff");
+    }
+  
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    body {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 8px;
+      padding: 0;
+    }
+
+    img {
+        margin: -8px;
+    }
+
+    .page {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .nav-wrapper {
+        display: flex;
+        gap: 8px;
+    }
+
+    .mini-btn {
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
+        max-width: 34px;
+    }
+  
+    hr {
+      border: none;
+      margin: 0;
+      height: 1px;
+    }
+  
+    p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+  
+    button, a {
+      padding: 8px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      border: 0;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      background: #000;
+      cursor: pointer;
+      z-index: 99;
+      /* transform: translateY(45px) scale(0.5);
+      opacity: 0; */
+      transition: all cubic-bezier(0.7, -0.4, 0.4, 1.4) .4s;
+    }
+  
+    button:hover, a:hover {
+      background: #444;
+      color: #fff;
+      transition: all ease .2s;
+    }
+  
+    .bold {
+      font-weight: 500;
+    }
+
+    .mb-8 {
+        margin-bottom: 8px;
+    }
+</style>
+
+<script>
+
+    const onRouteChange = () => {
+        const allRoutes = document.querySelectorAll('[data-route]');
+        allRoutes.forEach(r => r.style.display = 'none');
+        const activeRoute = document.querySelector(window.location.hash || '#home');
+        activeRoute.style.display = 'flex'
+    }
+
+    window.addEventListener('hashchange', onRouteChange)
+    onRouteChange();
+
+</script>
