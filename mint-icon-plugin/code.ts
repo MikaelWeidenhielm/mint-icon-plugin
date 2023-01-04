@@ -5,13 +5,42 @@ figma.ui.resize(280, 480);
 
 figma.ui.onmessage = (message) => {
 
-if(message === "generate-icon") {
+  if(message === "close") {
+    figma.closePlugin()
+  }
+
+  if (message === "icon-template") {
+    
+      const tempComponent = figma.root
+          .findAll(node => node.type === 'COMPONENT' && node.name === ".icon_template");
+
+          if(tempComponent[0]) {
+          
+            const instance = tempComponent[0].createInstance().detachInstance();
+            
+            figma.currentPage.appendChild(instance);
+            figma.currentPage.selection = [instance];
+            const {x, y} = figma.viewport.center;
+            
+            instance.x = x;
+            instance.y = y;
+            
+            const selection = figma.currentPage.selection[0];
+
+            selection.name = "icon template"
+          } else {
+
+            figma.ui.postMessage("template not found")
+            return;
+            
+          }
+  }
+
+  if(message === "generate-icon") {
     for (const node of figma.currentPage.selection) {
 
-    console.log(node.children)
-
     for (const child of node.children) {
-      if(child.type === "INSTANCE" && child.name === ".icon_template") {
+      if(child.type === "INSTANCE" && child.name === ".icon_keylines") {
         child.remove();
       } else {
         child.name = "outlinedVector"
@@ -101,7 +130,5 @@ if(message === "generate-icon") {
     componentSet[0].strokes = [componentStroke];
 
   }
-
-  // figma.closePlugin();
   }
 }

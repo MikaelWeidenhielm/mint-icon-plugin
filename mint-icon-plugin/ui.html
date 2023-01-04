@@ -1,11 +1,83 @@
 
-<div data-route id="home" class="page">
-    <p>What asset type will you contribute with?</p>
+<div data-route id="home" class="home">
+    <a href="#icon-template" class="card">
+        <div class="card-content">
+            <p class="title">Create icon</p>
+            <p>Get a template & draw a new icon from scratch in mint assets</p>
+        </div>
+        <p>-></p>
+    </a>
 
-    <section>
+    <a href="#icon-contrib" class="card">
+        <div class="card-content">
+            <p class="title">Create icon component</p>
+            <p>A guide to contribute with your icon to mint assets</p>
+        </div>
+        <p>-></p>
+    </a>
+
+    <a href="#export" class="card">
+        <div class="card-content">
+            <p class="title">Export icon</p>
+            <p>A guide to export your icon once it's been reviewed & approved</p>
+        </div>
+        <p>-></p>
+    </a>
+
+    <a class="card disabled">
+        <div class="card-content">
+            <p class="title">Create illustration</p>
+            <p>Coming soon™</p>
+        </div>
+        <p>-></p>
+    </a>
+    
+
+    <!-- <section>
         <a class="mb-8" href="#icon-1">Icon</a>
+        <a class="mb-8" href="#icon-template">Icon template</a>
         <a href="#illustration">Illustration</a>
-    </section>
+    </section> -->
+</div>
+
+<!-- Create icon template -->
+<div data-route id="icon-template" class="page">
+    <div>
+        <img height="280" width="280" src="https://res.cloudinary.com/dj0pc5wgk/image/upload/v1672824307/icontemplate_r0tpno.png" />
+      
+        <div class="content">
+            <ol id="temp-list">
+               <li>Important: Navigate to mint assets and create a branch</li> 
+               <li>Click the button below to get a template as seen in the image for drawing icons in</li> 
+               <li>Draw your icon using a 1.5px stroke-width</li> 
+            </ol>
+            <p id="temp-error">Looks like you're in the wrong file. Navigate to mint assets, create a branch and try again.</p>
+        </div>
+    </div>
+
+    <div class="nav-wrapper">
+    <a class="mini-btn" href="#home"><-</a>    
+    <a class="link" onclick="parent.postMessage({ pluginMessage: 'icon-template' }, '*')">Insert icon template</a>
+    </div>
+</div>
+<!-- Create icon template -->
+
+<!-- Create icon component variant set -->
+<div data-route id="icon-contrib" class="page">
+    <div>
+        <img height="280" width="280" src="https://media.tenor.com/3034faPtCXUAAAAi/raf-rafs.gif" />
+      
+        <div class="content">
+            <p>
+                Before we start, make sure you have created a branch in <span class="bold">mint assets</span> and placed your icon inside the page called <span class="bold">"icon"</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="nav-wrapper">
+    <a class="mini-btn" href="#home"><-</a>    
+    <a class="link" href="#icon-1">Next</a>
+    </div>
 </div>
 
 <div data-route id="icon-1" class="page">
@@ -31,7 +103,7 @@
 
     <div class="nav-wrapper">
     <a class="mini-btn" href="#home"><-</a>    
-    <a href="#icon-2">Next</a>
+    <a class="link" href="#icon-2">Next</a>
     </div>
 </div>
 
@@ -49,7 +121,7 @@
 
     <div class="nav-wrapper">
     <a class="mini-btn" href="#icon-1"><-</a>    
-    <a href="#icon-3">Next</a>
+    <a class="link" href="#icon-3">Next</a>
     </div>
 </div>
 
@@ -60,14 +132,14 @@
         <div class="content">
             <p class="bold">Step 3/6</p>
             <p>
-                Inside of your icon frame, mark all vectors <span class="bold">except the “icon_template” instance.</span>
+                Select your copied icon. <br /> Inside of your icon frame, mark all vectors <span class="bold">except the “icon_template” instance.</span>
             </p>
         </div>
     </div>
 
     <div class="nav-wrapper">
     <a class="mini-btn" href="#icon-2"><-</a>    
-    <a href="#icon-4">Next</a>
+    <a class="link" href="#icon-4">Next</a>
     </div>
 </div>
 
@@ -85,7 +157,7 @@
 
     <div class="nav-wrapper">
     <a class="mini-btn" href="#icon-3"><-</a>    
-    <a href="#icon-5">Next</a>
+    <a class="link" href="#icon-5">Next</a>
     </div>
 </div>
 
@@ -103,27 +175,61 @@
 
     <div class="nav-wrapper">
     <a class="mini-btn" href="#icon-4"><-</a>    
-    <a href="#icon-6">Next</a>
+    <a class="link" href="#icon-6">Next</a>
     </div>
 </div>
 
 <div data-route id="icon-6" class="page">
     <div>
-        <img height="280" width="280" src="https://media.tenor.com/dd-NabjUbqsAAAAM/brain-no-way.gif" />
+        <img height="280" width="280" src="https://media.tenor.com/U4hcOCBfCI4AAAAC/button-mouse.gif" />
       
         <div class="content">
             <p class="bold">Step 6/6</p>
             <p>
-                Press generate component below and let figma do the nitty gritty boring stuff.
+                Press generate component below and let figma work it's magic
             </p>
         </div>
     </div>
 
     <div class="nav-wrapper">
     <a class="mini-btn" href="#icon-5"><-</a>
-    <button onclick="parent.postMessage({ pluginMessage: 'generate-icon' }, '*')">
+    <a class="link" href="#success" onclick="parent.postMessage({ pluginMessage: 'generate-icon' }, '*')">
         Generate component
-    </button>
+    </a>
+    </div>
+</div>
+
+<div data-route id="success" class="page">
+    <div>
+        <img height="280" width="280" src="https://media1.giphy.com/media/3ohzgSHpvk6b8M7f9e/giphy.gif?cid=ecf05e47absgg47wtpwpxyup7sqqp22mdx09zuwfp1nf5wvv&rid=giphy.gif&ct=g" />
+      
+        <div class="content">
+            <p class="bold">Wehooooo great success</p>
+        </div>
+    </div>
+
+    <div class="nav-wrapper">
+        <a class="mini-btn" href="#icon-6"><-</a>    
+        <a class="link" href="#icon-6" onclick="parent.postMessage({ pluginMessage: 'close' }, '*')">Close</a>
+    </div>
+</div>
+<!-- Create icon component variant set -->
+
+<div data-route id="export" class="page">
+    <div>
+        <img height="280" width="280" src="https://res.cloudinary.com/dj0pc5wgk/image/upload/v1672833826/export_rwt8km.gif" />
+      
+        <div class="content">
+            <ol id="temp-list">
+                <li>Create an instance of your icon in size medium</li> 
+                <li>Launch the plugin SVG Export</li> 
+                <li>Follow the instructions from the export plugin</li> 
+            </ol>
+        </div>
+    </div>
+
+    <div class="nav-wrapper">
+        <a class="link" href="#home">Back</a>
     </div>
 </div>
 
@@ -159,11 +265,57 @@
         margin: -8px;
     }
 
+    .home {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
     .page {
         display: flex;
         flex-direction: column;
         height: 100%;
         justify-content: space-between;
+    }
+
+    .card {
+        color: #000;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: all .2s ease;
+    }
+
+    .card:hover {
+        cursor: pointer;
+        border: 1px solid #eee;
+        transition: all .2s ease;
+    }
+
+    .card.disabled {
+        opacity: 0.5;
+        cursor: no-drop;
+    }
+
+    .card.disabled:hover {
+        border: 1px solid #ddd;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        max-width: 90%;
+
+        color: #888;
+    }
+
+    .card-content > .title {
+        font-weight: 500;
+        margin-bottom: 4px;
+        color: #000;
     }
 
     .content {
@@ -182,7 +334,21 @@
         background: #fff;
         color: #000;
         border: 1px solid #000;
-        max-width: 34px;
+        width: 100%;
+        max-width: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .mini-btn:hover {
+        background: #444;
+        border: 1px solid #444;
+        color: #fff;
+        transition: all ease .2s;
     }
   
     hr {
@@ -190,18 +356,31 @@
       margin: 0;
       height: 1px;
     }
+
+    #temp-error {
+        display: none;
+        color: red;
+    }
+
+    ol {
+        padding-left: 12px;
+    }
   
-    p {
+    p, li {
       margin: 0;
       font-size: 12px;
       line-height: 16px;
+    }
+
+    li {
+        margin-bottom: 12px;
     }
 
     a {
         text-decoration: none;
     }
   
-    button, a {
+    button, .link {
       padding: 8px;
       display: flex;
       justify-content: center;
@@ -214,12 +393,10 @@
       background: #000;
       cursor: pointer;
       z-index: 99;
-      /* transform: translateY(45px) scale(0.5);
-      opacity: 0; */
       transition: all cubic-bezier(0.7, -0.4, 0.4, 1.4) .4s;
     }
   
-    button:hover, a:hover {
+    button:hover, .link:hover {
       background: #444;
       color: #fff;
       transition: all ease .2s;
@@ -235,6 +412,15 @@
 </style>
 
 <script>
+
+    onmessage = (event) => {
+      console.log("got this from the plugin code", event.data.pluginMessage)
+
+      if (event.data.pluginMessage === "template not found") {
+        document.getElementById("temp-list").style.display = "none";
+        document.getElementById("temp-error").style.display = "flex";
+      }
+    }
 
     const onRouteChange = () => {
         const allRoutes = document.querySelectorAll('[data-route]');
