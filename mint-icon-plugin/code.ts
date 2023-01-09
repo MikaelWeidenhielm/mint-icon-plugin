@@ -40,7 +40,7 @@ figma.ui.onmessage = (message) => {
     for (const node of figma.currentPage.selection) {
 
     for (const child of node.children) {
-      if(child.type === "INSTANCE" && child.name === ".icon_keylines") {
+      if(child.type === "INSTANCE" && child.name === ".icon_template") {
         child.remove();
       } else {
         child.name = "outlinedVector"
@@ -49,6 +49,9 @@ figma.ui.onmessage = (message) => {
 
     //Flatten vector
     figma.flatten(node.children, node);
+    node.children[0].constraints = { horizontal: 'SCALE', vertical: 'SCALE' }
+
+    console.log(node.children[0].constraints)
 
 
     //Save variables of current selections name and location on the page
