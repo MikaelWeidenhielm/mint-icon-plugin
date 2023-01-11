@@ -40,7 +40,7 @@ figma.ui.onmessage = (message) => {
     for (const node of figma.currentPage.selection) {
 
     for (const child of node.children) {
-      if(child.type === "INSTANCE" && child.name === ".icon_template") {
+      if(child.type === "INSTANCE" || child.type === "FRAME" && child.name === ".icon_template") {
         child.remove();
       } else {
         child.name = "outlinedVector"
