@@ -70,10 +70,11 @@ figma.ui.onmessage = (message) => {
     }
 
     //in order to create a component set with 2 variants we need to clone the component
-    const componentClone = component.clone();
+    const componentCloneMedium = component.clone();
+    const componentCloneSmall = component.clone();
 
     //sets the selection to the newly created components
-    figma.currentPage.selection = [component, componentClone];
+    figma.currentPage.selection = [component, componentCloneMedium, componentCloneSmall];
 
     //combines them as a variant
     figma.combineAsVariants(figma.currentPage.selection, figma.currentPage)
@@ -82,35 +83,26 @@ figma.ui.onmessage = (message) => {
     node.remove();
 
     //creates references to the two variants
-    const mdVariant = figma.currentPage.selection[0];
-    const smVariant = figma.currentPage.selection[1];
+    const lgVariant = figma.currentPage.selection[0];
+    const mdVariant = figma.currentPage.selection[1];
+    const smVariant = figma.currentPage.selection[2];
+
+    //large size icon
+    lgVariant.name = "size=large"
+    lgVariant.children[0].name = "vector"
 
     //medium size icon
     mdVariant.name = "size=medium"
     mdVariant.children[0].name = "vector"
+    mdVariant.resize(20, 20);
 
     //small size icon
     smVariant.name = "size=small"
     smVariant.children[0].name = "vector"
     smVariant.resize(16, 16);
 
-    //Overengineered bullshit in order to add a stroke, since the original strokes array is read-only
-    const strokeObj = {
-      blendMode: "NORMAL",
-      color: {r: 0, g: 0, b: 0},
-      opacity: 1,
-      type: "SOLID",
-      visible: true
-    }
-
-    //must be placed in an array at the first index and then append to the variant
-    smVariant.children[0].strokes = [strokeObj];
-
-    //adding tiny strokeweight to mitigate thin icons
-    smVariant.children[0].strokeWeight = .2;
-
     //selects the parent (component)
-    figma.currentPage.selection = [smVariant.parent];
+    figma.currentPage.selection = [lgVariant.parent];
 
     const componentSet = figma.currentPage.selection;
 
